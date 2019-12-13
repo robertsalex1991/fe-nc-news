@@ -1,0 +1,21 @@
+.App {
+  background-color: white;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+}
+
+.topicBar {
+  display: flex;
+  list-style: none;
+}
+
+.App-header {
+  text-align: center;
+  font-size: 500%;
+}
