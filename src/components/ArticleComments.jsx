@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { getComments } from "../API";
+import { getComments, commentVote } from "../API";
 import CommentForm from "./CommentForm";
 import DeleteComment from "./DeleteComment";
 import VoteButtons from "./VoteButtons";
-import { commentVote } from "../API";
 
 class ArticleComments extends Component {
   state = {
@@ -12,7 +11,8 @@ class ArticleComments extends Component {
   };
 
   fetchComments = () => {
-    getComments(this.props.articleId).then(comments => {
+    const { articleId } = this.props;
+    getComments(articleId).then(comments => {
       this.setState({ comments: comments, isLoading: false });
     });
   };
@@ -38,14 +38,14 @@ class ArticleComments extends Component {
   };
 
   render() {
-    const { comments } = this.state;
-    const { isLoading } = this.state;
+    const { comments, isLoading } = this.state;
+    const { signedInUser, articleId } = this.props;
     if (isLoading) return <p className="loadingBar">...Loading Comments</p>;
     return (
       <div>
         <CommentForm
-          signedInUser={this.props.signedInUser}
-          articleId={this.props.articleId}
+          signedInUser={signedInUser}
+          articleId={articleId}
           updateComments={this.updateComments}
         />
         <ul>

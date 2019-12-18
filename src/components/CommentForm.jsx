@@ -11,25 +11,24 @@ class CommentForm extends Component {
   };
 
   handleSubmit = event => {
+    const { articleId, signedInUser, updateComments } = this.props;
+    const { commentInput } = this.state;
     event.preventDefault();
-    postComment(
-      this.props.articleId,
-      this.state.commentInput,
-      this.props.signedInUser,
-      this.setState({ commentInput: "" })
-    ).then(comment => {
-      this.props.updateComments(comment.data.comment);
+    postComment(articleId, commentInput, signedInUser).then(comment => {
+      this.setState({ commentInput: "" });
+      updateComments(comment.data.comment);
     });
   };
 
   render() {
+    const { commentInput } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="addComment">
           {" "}
           add Comment
           <input
-            value={this.state.commentInput}
+            value={commentInput}
             onChange={this.handleChange}
             type="text"
           />
@@ -41,3 +40,5 @@ class CommentForm extends Component {
 }
 
 export default CommentForm;
+
+

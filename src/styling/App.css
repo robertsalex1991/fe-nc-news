@@ -7,15 +7,56 @@
   flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
+  
+}
+
+.homeButton {
+  /* padding-right: 700px; */
+  
+  text-align: left;
+  align-self: left;
+}
+
+.signedIn {
+  /* padding-left: 650px; */
+  text-align: right;
+  align-self: right;
 }
 
 .topicBar {
+  text-align: center;
   display: flex;
   list-style: none;
 }
 
+.topicButton {
+  padding: 6px;
+  margin-right: 20px;
+}
+
 .App-header {
+  border: 3px solid rgb(22, 77, 100);
+  border-radius: 15px;
   text-align: center;
   font-size: 500%;
+  
+}
+
+.voteButtons {
+  color: white;
+  background-color: red;
+  padding: 1px 5px;
+  margin: 0px 5px 12px 0px;
+  border: red;
+  border-radius: 15px;
+}
+
+.articleList {
+  border: 5px solid rgb(22, 77, 100);
+  border-radius: 15px;
+  list-style: none;
+  text-align: center;
+  padding: 15px;
+  width: 600px;
+  margin: 0 auto;
 }

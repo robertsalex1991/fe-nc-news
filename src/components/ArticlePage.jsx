@@ -13,7 +13,8 @@ class ArticlePage extends Component {
   };
 
   fetchArticle = () => {
-    getArticle(this.props.id)
+    const { id } = this.props;
+    getArticle(id)
       .then(article => {
         this.setState({ article: article, isLoading: false });
       })
@@ -28,6 +29,7 @@ class ArticlePage extends Component {
 
   render() {
     const { article, isLoading, err } = this.state;
+    const { signedInUser } = this.props;
     if (err) return <ErrNotFound />;
     if (isLoading) return <p className="loadingBar">...Loading Articles</p>;
     return (
@@ -42,7 +44,7 @@ class ArticlePage extends Component {
         />
         <ViewToggler>
           <ArticleComments
-            signedInUser={this.props.signedInUser}
+            signedInUser={signedInUser}
             articleId={article.article_id}
           />
         </ViewToggler>

@@ -5,8 +5,12 @@ import TopicsButton from "./TopicsButtons";
 function NavBar(props) {
   return (
     <div className="navbar">
-     <p> <Link to="/articles">Home</Link> </p> <TopicsButton />
-      <p>{props.signedInUser}: signed in</p>
+      <p>
+        {" "}
+        <Link className='homeButton' to="/articles">Home</Link>{" "}
+      </p>{" "}
+      <TopicsButton />
+      <p className="signedIn">{props.signedInUser}: signed in</p>
     </div>
   );
 }

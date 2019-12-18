@@ -11,16 +11,20 @@ class AllArticles extends Component {
   };
 
   fetchArticles = () => {
-    getArticles(this.props.topic, this.state.sortBy).then(articles => {
+    const { topic } = this.props;
+    const { sortBy } = this.state;
+    getArticles(topic, sortBy).then(articles => {
       this.setState({ articles: articles, isLoading: false });
-    })
+    });
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.topic !== this.props.topic) {
+    const { topic } = this.props;
+    const { sortBy } = this.state;
+    if (prevProps.topic !== topic) {
       this.fetchArticles();
     }
-    if (prevState.sortBy !== this.state.sortBy) {
+    if (prevState.sortBy !== sortBy) {
       this.fetchArticles();
     }
   }

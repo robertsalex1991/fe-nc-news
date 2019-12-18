@@ -6,12 +6,13 @@ class ViewToggler extends Component {
   };
   render() {
     const { displayThing } = this.state;
+    const { children } = this.props
     return (
       <div>
         <button className="toggler" onClick={this.toggleDisplay}>
           {displayThing ? "Hide Comments" : "Show Comments"}
         </button>
-        {displayThing && this.props.children}
+        {displayThing && children}
       </div>
     );
   }

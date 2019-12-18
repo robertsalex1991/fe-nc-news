@@ -37,21 +37,17 @@ export const postComment = (articleId, comment, user) => {
 };
 
 export const deleteComment = comment_id => {
-  axios.delete(`${baseURL}/comments/${comment_id}`).then(() => {});
+  axios.delete(`${baseURL}/comments/${comment_id}`);
 };
 
 export const commentVote = (comment_id, votes) => {
-  axios
-    .patch(`${baseURL}/comments/${comment_id}`, {
-      inc_votes: votes
-    })
-    .then(() => {});
+  axios.patch(`${baseURL}/comments/${comment_id}`, {
+    inc_votes: votes
+  });
 };
 
 export const articleVote = (article_id, votes) => {
-  axios
-    .patch(`${baseURL}/articles/${article_id}`, {
-      inc_votes: votes
-    })
-    .then(() => {});
+  axios.patch(`${baseURL}/articles/${article_id}`, {
+    inc_votes: votes
+  });
 };

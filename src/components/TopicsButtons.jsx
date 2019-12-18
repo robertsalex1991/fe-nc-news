@@ -31,7 +31,10 @@ class TopicsButtons extends Component {
           {topics.map(topic => {
             return (
               <li key={topic.slug}>
-                <Link to={`/topics/${topic.slug}`}> | {topic.slug} | </Link>
+                <Link className="topicButton " to={`/topics/${topic.slug}`}>
+                  {" "}
+                  | {topic.slug} |{" "}
+                </Link>
               </li>
             );
           })}
