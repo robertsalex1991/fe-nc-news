@@ -1,19 +1,8 @@
 import React, { Component } from "react";
 
-export default class VoteButtons extends Component {
+class VoteButtons extends Component {
   state = {
     voteDifference: 0
-  };
-
-  const;
-  handleVote = votes => {
-    const { sendVotes, thing_id } = this.props;
-    this.setState(currentState => {
-      return {
-        voteDifference: currentState.voteDifference + votes
-      };
-    });
-    sendVotes(thing_id, votes);
   };
 
   render() {
@@ -21,7 +10,7 @@ export default class VoteButtons extends Component {
     const { votes } = this.props;
     return (
       <div>
-        <p>likes: {votes + voteDifference}</p>
+        <p>likes: {votes + voteDifference} </p>
         <button
           className="voteButtons"
           disabled={voteDifference === 1}
@@ -29,8 +18,7 @@ export default class VoteButtons extends Component {
             this.handleVote(1);
           }}
         >
-          {" "}
-          Votes Up{" "}
+          Votes up
         </button>
         <button
           className="voteButtons"
@@ -39,9 +27,19 @@ export default class VoteButtons extends Component {
             this.handleVote(-1);
           }}
         >
-          Votes Down
+          Votes down
         </button>
       </div>
     );
   }
+
+  handleVote = votes => {
+    const { sendVotes, target_id } = this.props;
+    this.setState(currentState => {
+      return { voteDifference: currentState.voteDifference + votes };
+    });
+    sendVotes(target_id, votes);
+  };
 }
+
+export default VoteButtons;

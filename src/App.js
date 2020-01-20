@@ -1,34 +1,37 @@
-import React from "react";
-import "./styling/App.css";
+import React, { Component } from "react";
+import "./App.css";
 import Header from "./components/Header";
-import { Router } from "@reach/router";
 import AllArticles from "./components/AllArticles";
+import { Router } from "@reach/router";
 import ArticlePage from "./components/ArticlePage";
-import NavBar from "./components/NavBar";
+import TopicsPage from "./components/TopicsPage";
+import ErrorPage from "./components/ErrorPage";
 
-class App extends React.Component {
+class App extends Component {
   state = {
     signedInUser: "tickle122" //until we can add and sign in new users then this is just taken from the db//
   };
 
   render() {
+    const { signedInUser } = this.state;
     return (
       <div className="App">
-        <Header className="App-header" />
-        <NavBar signedInUser={this.state.signedInUser} />
-
+        <Header changeUser={this.changeUser} signedInUser={signedInUser} />
         <Router>
-          <AllArticles path={"/"} />
-          <AllArticles path="/topics/:topic" />
+          <AllArticles path="/" />
           <AllArticles path="/articles/" />
-          <ArticlePage
-            signedInUser={this.state.signedInUser}
-            path="/articles/:id"
-          />
+          <AllArticles path="/topics/:topic" />
+          <ArticlePage signedInUser={signedInUser} path="/articles/:id" />
+          <TopicsPage path="/topics" />
+          <ErrorPage default />
         </Router>
       </div>
     );
   }
+
+  changeUser = username => {
+    this.setState({ signedInUser: username });
+  };
 }
 
 export default App;

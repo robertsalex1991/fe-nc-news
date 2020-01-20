@@ -2,26 +2,27 @@ import React, { Component } from "react";
 
 class ViewToggler extends Component {
   state = {
-    displayThing: false
+    onDisplay: false
   };
-  render() {
-    const { displayThing } = this.state;
-    const { children } = this.props
-    return (
-      <div>
-        <button className="toggler" onClick={this.toggleDisplay}>
-          {displayThing ? "Hide Comments" : "Show Comments"}
-        </button>
-        {displayThing && children}
-      </div>
-    );
-  }
 
   toggleDisplay = () => {
     this.setState(currentState => {
-      return { displayThing: !currentState.displayThing };
+      return { onDisplay: !currentState.onDisplay };
     });
   };
+
+  render() {
+    const { onDisplay } = this.state;
+    const { children, hideMessage, showMessage } = this.props;
+    return (
+      <div>
+        <button onClick={this.toggleDisplay}>
+          {onDisplay ? `${hideMessage}` : `${showMessage}`}
+        </button>
+        {onDisplay && children}
+      </div>
+    );
+  }
 }
 
 export default ViewToggler;

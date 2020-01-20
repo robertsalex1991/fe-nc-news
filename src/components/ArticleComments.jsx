@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getComments, commentVote } from "../API";
+import { getArticleComments, commentVote } from "../API";
 import CommentForm from "./CommentForm";
 import DeleteComment from "./DeleteComment";
 import VoteButtons from "./VoteButtons";
@@ -10,16 +10,53 @@ class ArticleComments extends Component {
     isLoading: true
   };
 
-  fetchComments = () => {
-    const { articleId } = this.props;
-    getComments(articleId).then(comments => {
-      this.setState({ comments: comments, isLoading: false });
-    });
-  };
-
   componentDidMount() {
     this.fetchComments();
   }
+
+  render() {
+    const { comments, isLoading } = this.state;
+    const { article_id, signedInUser } = this.props;
+
+    if (isLoading) return <p>Loading comments...</p>;
+    return (
+      <div>
+        <CommentForm
+          updateComments={this.updateComments}
+          signedInUser={signedInUser}
+          article_id={article_id}
+        />
+        <ul>
+          {comments.map(comment => {
+            return (
+              <li key={comment.comment_id} className="comment">
+                <p className="commentAuthor">{comment.author}</p>
+                <p className="commentBody"> {comment.body}</p>
+                <VoteButtons
+                  votes={comment.votes}
+                  target_id={comment.comment_id}
+                  sendVotes={commentVote}
+                />
+                <DeleteComment
+                  signedInUser={signedInUser}
+                  removeComment={this.removeComment}
+                  comment_id={comment.comment_id}
+                  author={comment.author}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+
+  fetchComments = () => {
+    const { article_id } = this.props;
+    getArticleComments(article_id).then(articleComments => {
+      this.setState({ comments: articleComments, isLoading: false });
+    });
+  };
 
   updateComments = newComment => {
     this.setState(currentState => {
@@ -36,40 +73,6 @@ class ArticleComments extends Component {
       };
     });
   };
-
-  render() {
-    const { comments, isLoading } = this.state;
-    const { signedInUser, articleId } = this.props;
-    if (isLoading) return <p className="loadingBar">...Loading Comments</p>;
-    return (
-      <div>
-        <CommentForm
-          signedInUser={signedInUser}
-          articleId={articleId}
-          updateComments={this.updateComments}
-        />
-        <ul>
-          {comments.map(comment => {
-            return (
-              <li key={comment.comment_id} className="comment">
-                <p className="commentAuthor">{comment.author}</p>
-                <p className="commentBody"> {comment.body}</p>
-                <VoteButtons
-                  thing_id={comment.comment_id}
-                  votes={comment.votes}
-                  sendVotes={commentVote}
-                />
-                <DeleteComment
-                  removeComment={this.removeComment}
-                  comment_id={comment.comment_id}
-                />
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
 }
 
 export default ArticleComments;

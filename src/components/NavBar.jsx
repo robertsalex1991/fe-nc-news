@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "@reach/router";
-import TopicsButton from "./TopicsButtons";
+import TopicsButtons from "./TopicsButtons";
+import UserSignIn from "./UserSignIn";
 
-function NavBar(props) {
+const NavBar = props => {
+  const { changeUser, signedInUser } = props;
   return (
-    <div className="navbar">
-      <p>
+    <div className="navBar">
+      <Link to={"/articles"} className="homeButton">
         {" "}
-        <Link className='homeButton' to="/articles">Home</Link>{" "}
-      </p>{" "}
-      <TopicsButton />
-      <p className="signedIn">{props.signedInUser}: signed in</p>
+        home{" "}
+      </Link>
+      <TopicsButtons />
+      <UserSignIn changeUser={changeUser} signedInUser={signedInUser} />
     </div>
   );
-}
+};
 
 export default NavBar;

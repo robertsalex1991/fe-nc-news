@@ -1,32 +1,33 @@
 .App {
   background-color: white;
+  display: grid;
+  /* grid-template-columns: */
 }
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  list-style: none;
-  
+.navBar {
+  display: inline-flex;
 }
 
 .homeButton {
-  /* padding-right: 700px; */
-  
-  text-align: left;
-  align-self: left;
+  display: flex;
+  align-items: center;
 }
 
-.signedIn {
-  /* padding-left: 650px; */
-  text-align: right;
-  align-self: right;
+.UserSignIn {
+  display: flex;
+  align-items: center;
+}
+
+.errorMessage {
+  font-size: 200%;
+  text-align: center;
 }
 
 .topicBar {
   text-align: center;
-  display: flex;
+  display: inline-flex;
   list-style: none;
+  padding-right: 2%;
 }
 
 .topicButton {
@@ -38,8 +39,7 @@
   border: 3px solid rgb(22, 77, 100);
   border-radius: 15px;
   text-align: center;
-  font-size: 500%;
-  
+  font-size: 100%;
 }
 
 .voteButtons {
@@ -51,12 +51,17 @@
   border-radius: 15px;
 }
 
-.articleList {
+.articleCard {
   border: 5px solid rgb(22, 77, 100);
   border-radius: 15px;
   list-style: none;
   text-align: center;
   padding: 15px;
   width: 600px;
+  margin: 0 auto;
+}
+
+.articleHeader {
+  text-align: center;
   margin: 0 auto;
 }

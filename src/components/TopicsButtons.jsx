@@ -1,31 +1,28 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { getTopics } from "../API";
 import { Link } from "@reach/router";
 
 class TopicsButtons extends Component {
   state = {
-    topics: []
+    topics: [],
+    isLoading: true
   };
 
-  getTopics = () => {
-    axios
-      .get("https://be-nc-news-ar.herokuapp.com/api/topics")
-      .then(({ data }) => {
-        this.setState({ topics: data.topics });
-      })
-      .catch(err => {
-        this.setState({ err });
-      });
+  fetchTopics = () => {
+    getTopics().then(topics => {
+      this.setState({ topics: topics, isLoading: false });
+    });
   };
 
   componentDidMount() {
-    this.getTopics();
+    this.fetchTopics();
   }
 
   render() {
-    const { topics } = this.state;
+    const { topics, isLoading } = this.state;
+    if (isLoading) return <p>...</p>;
     return (
-      <div className="topicBar">
+      <div>
         <ul className="topicBar">
           <label>Filter by Topic: </label>
           {topics.map(topic => {
@@ -38,6 +35,10 @@ class TopicsButtons extends Component {
               </li>
             );
           })}
+          <li key="allTopics">
+            {" "}
+            <Link to="/topics">See All Topics </Link>
+          </li>{" "}
         </ul>
       </div>
     );

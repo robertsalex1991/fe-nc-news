@@ -6,39 +6,38 @@ class CommentForm extends Component {
     commentInput: ""
   };
 
-  handleChange = event => {
-    this.setState({ commentInput: event.target.value });
-  };
-
-  handleSubmit = event => {
-    const { articleId, signedInUser, updateComments } = this.props;
-    const { commentInput } = this.state;
-    event.preventDefault();
-    postComment(articleId, commentInput, signedInUser).then(comment => {
-      this.setState({ commentInput: "" });
-      updateComments(comment.data.comment);
-    });
-  };
-
   render() {
     const { commentInput } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="addComment">
-          {" "}
-          add Comment
+      <form action="" onSubmit={this.handleSubmit}>
+        <label htmlFor="">
+          add comment:{" "}
           <input
             value={commentInput}
             onChange={this.handleChange}
             type="text"
-          />
+          ></input>
+          <button type="submit">Submit</button>
         </label>
-        <button>submit</button>
       </form>
     );
   }
+
+  handleChange = event => {
+    const { value } = event.target;
+    this.setState({ commentInput: value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { article_id, signedInUser, updateComments } = this.props;
+    const { commentInput } = this.state;
+    console.log(signedInUser);
+    postComment(article_id, commentInput, signedInUser).then(({ data }) => {
+      this.setState({ commentInput: "" });
+      updateComments(data.comment);
+    });
+  };
 }
 
 export default CommentForm;
-
-
