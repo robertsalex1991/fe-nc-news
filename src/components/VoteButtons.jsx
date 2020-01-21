@@ -7,7 +7,8 @@ class VoteButtons extends Component {
 
   render() {
     const { voteDifference } = this.state;
-    const { votes } = this.props;
+    const { votes, signedInUser, author } = this.props;
+    if (signedInUser === author) return <p>likes: {votes + voteDifference} </p>;
     return (
       <div>
         <p>likes: {votes + voteDifference} </p>

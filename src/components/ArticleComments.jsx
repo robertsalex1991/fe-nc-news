@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { getArticleComments, commentVote } from "../API";
+import { getArticleComments, commentVote, deleteComment } from "../API";
 import CommentForm from "./CommentForm";
-import DeleteComment from "./DeleteComment";
 import VoteButtons from "./VoteButtons";
+import DeleteButton from "./DeleteButton";
 
 class ArticleComments extends Component {
   state = {
@@ -36,12 +36,16 @@ class ArticleComments extends Component {
                   votes={comment.votes}
                   target_id={comment.comment_id}
                   sendVotes={commentVote}
-                />
-                <DeleteComment
                   signedInUser={signedInUser}
-                  removeComment={this.removeComment}
-                  comment_id={comment.comment_id}
                   author={comment.author}
+                />
+                <DeleteButton
+                  author={comment.author}
+                  signedInUser={signedInUser}
+                  item_id={comment.comment_id}
+                  renderFunc={this.removeComment}
+                  deleteFunc={deleteComment}
+                  deleteMsg="Delete Comment"
                 />
               </li>
             );

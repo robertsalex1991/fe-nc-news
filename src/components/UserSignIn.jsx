@@ -8,7 +8,6 @@ class UserSignIn extends Component {
 
   fetchUsers = () => {
     api.getUsers().then(users => {
-      console.log(users);
       this.setState({ users: users });
     });
   };

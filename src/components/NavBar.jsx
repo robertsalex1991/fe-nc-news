@@ -12,6 +12,10 @@ const NavBar = props => {
         home{" "}
       </Link>
       <TopicsButtons />
+      <Link to={"/addArticle"} className="addArticle">
+        {" "}
+        Add Article{" "}
+      </Link>
       <UserSignIn changeUser={changeUser} signedInUser={signedInUser} />
     </div>
   );
