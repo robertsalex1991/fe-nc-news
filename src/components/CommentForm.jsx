@@ -32,7 +32,6 @@ class CommentForm extends Component {
     event.preventDefault();
     const { article_id, signedInUser, updateComments } = this.props;
     const { commentInput } = this.state;
-    console.log(signedInUser);
     postComment(article_id, commentInput, signedInUser).then(({ data }) => {
       this.setState({ commentInput: "" });
       updateComments(data.comment);

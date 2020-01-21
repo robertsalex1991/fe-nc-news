@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { postArticle } from "../API";
 import CreateArticleTopics from "./CreateArticleTopics";
+import ErrorPage from "./ErrorPage";
 
 class AddArticle extends Component {
   state = {
     title: "",
     body: "",
     topic: "",
-    isLoading: true
+    isLoading: true,
+    err: null
   };
 
   componentDidMount() {
@@ -15,7 +17,8 @@ class AddArticle extends Component {
   }
 
   render() {
-    const { title, body, isLoading } = this.state;
+    const { title, body, isLoading, err } = this.state;
+    if (err) return <ErrorPage {...err} />;
     if (isLoading) return <p>...Loading</p>;
 
     return (
@@ -49,9 +52,14 @@ class AddArticle extends Component {
     const { signedInUser } = this.props;
     const { title, body, topic } = this.state;
 
-    postArticle(title, body, topic, signedInUser).then(({ data }) => {
-      this.setState({ title: "", body: "", slug: "" });
-    });
+    postArticle(title, body, topic, signedInUser)
+      .then(({ data }) => {
+        this.setState({ title: "", body: "", slug: "" });
+      })
+      .catch(({ response }) => {
+        console.dir(response);
+        this.setState({ err: response });
+      });
   };
 
   //need to make handle changes into one generalised function, not sure if I can add placeholder parameter next to event in the function

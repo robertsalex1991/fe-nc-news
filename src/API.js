@@ -15,7 +15,6 @@ export const getArticles = (topic, sortBy, limit, p) => {
       }
     })
     .then(({ data }) => {
-      console.log(data);
       return data;
     });
 };

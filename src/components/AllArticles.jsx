@@ -26,8 +26,12 @@ class AllArticles extends Component {
     const { sortBy, p } = this.state;
 
     if (prevProps.topic !== topic) {
-      this.fetchArticles();
-      this.setState({ p: 1 });
+      this.setState({ p: 1 }, () => {
+        this.fetchArticles();
+      });
+      /*imperfect solution which causes the data request to happen twice, but prevents errors
+      from occurring when making a request from a higher page number than the max page of the
+      new topic you are trying to view */
     }
     if (prevState.sortBy !== sortBy || prevState.p !== p) {
       this.fetchArticles();
@@ -38,7 +42,7 @@ class AllArticles extends Component {
     const { articles, isLoading, err, p, maxPage } = this.state;
 
     if (isLoading) return <p className="loadingBar">Loading...</p>;
-    if (err) return <ErrorPage />;
+    if (err) return <ErrorPage {...err} />;
     return (
       <div>
         <h1 className="articleHeader">Articles</h1>
@@ -58,16 +62,20 @@ class AllArticles extends Component {
   fetchArticles = () => {
     const { topic } = this.props;
     const { sortBy, limit, p } = this.state;
-    getArticles(topic, sortBy, limit, p).then(articleData => {
-      const { articles, article_count } = articleData;
-      const maxPage = Math.ceil(article_count / limit);
-      this.setState({
-        articles: articles,
-        isLoading: false,
-        articleCount: article_count,
-        maxPage: maxPage
+    getArticles(topic, sortBy, limit, p)
+      .then(articleData => {
+        const { articles, article_count } = articleData;
+        const maxPage = Math.ceil(article_count / limit);
+        this.setState({
+          articles: articles,
+          isLoading: false,
+          articleCount: article_count,
+          maxPage: maxPage
+        });
+      })
+      .catch(({ response }) => {
+        this.setState({ err: response });
       });
-    });
   };
 
   getOrder = event => {

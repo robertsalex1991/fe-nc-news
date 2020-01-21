@@ -69,7 +69,7 @@ class ArticlePage extends Component {
         this.setState({ article: article, isLoading: false });
       })
       .catch(({ response }) => {
-        console.dir(response.data);
+        console.dir(response);
         this.setState({ err: response });
       });
   };
