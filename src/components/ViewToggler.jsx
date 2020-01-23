@@ -16,7 +16,7 @@ class ViewToggler extends Component {
     const { children, hideMessage, showMessage } = this.props;
     return (
       <div>
-        <button onClick={this.toggleDisplay}>
+        <button onClick={this.toggleDisplay} className="positiveButtons">
           {onDisplay ? `${hideMessage}` : `${showMessage}`}
         </button>
         {onDisplay && children}

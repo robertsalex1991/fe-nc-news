@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getTopics } from "../API";
+import { Link } from "@reach/router";
 
 class TopicsPage extends Component {
   state = {
@@ -20,7 +21,7 @@ class TopicsPage extends Component {
           {topics.map(topic => {
             return (
               <li key={topic.slug} className="topicList">
-                {topic.slug}
+                <Link to={`/topics/${topic.slug}`}> {topic.slug} </Link>
               </li>
             );
           })}

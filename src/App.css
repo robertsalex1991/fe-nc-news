@@ -1,14 +1,74 @@
 .App {
-  background-color: white;
+  background-color: #fbf2c0;
   display: grid;
   /* grid-template-columns: */
 }
 
+.titleBanner {
+  /* border: 5px solid #50a2a7; */
+  border-radius: 5px;
+  padding: 5px 20px 10px 20px;
+  margin: 6 auto;
+  max-width: 200px;
+  min-width: 200px;
+}
+
+.signInDropList {
+  font-size: 13px;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 10px 10px;
+}
+.sortByDropList {
+  font-size: 13px;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.articleTopicSelect {
+  font-size: 13px;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.positiveButtons {
+  font-size: 13px;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 15 auto;
+}
+.sortByForm {
+  margin: 0 auto;
+  padding: 15px;
+}
 .navBar {
   display: inline-flex;
+  color: #fbf2c0;
+}
+
+.UserSignIn {
+  color: #fbf2c0;
+  margin: 5px 10px;
 }
 
 .homeButton {
+  color: #fbf2c0;
   display: flex;
   align-items: center;
 }
@@ -24,44 +84,88 @@
 }
 
 .topicBar {
+  color: #fbf2c0;
   text-align: center;
   display: inline-flex;
   list-style: none;
   padding-right: 2%;
 }
 
+.topicList {
+  list-style: none;
+  text-align: center;
+  padding: 15px;
+  margin: 10 auto;
+  font-size: xx-large;
+  color: #50a2a7;
+}
+
 .topicButton {
+  text-align: center;
   padding: 6px;
   margin-right: 20px;
+  color: #fbf2c0;
 }
 
 .App-header {
-  border: 3px solid rgb(22, 77, 100);
-  border-radius: 15px;
+  /* border: 3px solid #ed254e; */
   text-align: center;
   font-size: 100%;
+  color: #9b2915;
+  background-color: #231651;
 }
 
 .voteButtons {
-  color: white;
-  background-color: red;
+  color: #fbf2c0;
+  background-color: #ed254e;
   padding: 1px 5px;
   margin: 0px 5px 12px 0px;
-  border: red;
+  border: #e9b44c;
+  border-radius: 15px;
+}
+
+.deleteButton {
+  color: #ed254e;
+  background-color: #e9b44c;
+  padding: 1px 5px;
+  margin: 0px 5px 12px 0px;
+  border: #e9b44c;
   border-radius: 15px;
 }
 
 .articleCard {
-  border: 5px solid rgb(22, 77, 100);
+  border: 5px solid #50a2a7;
   border-radius: 15px;
   list-style: none;
   text-align: center;
   padding: 15px;
   width: 600px;
+  margin: 20 auto;
+  color: #50a2a7;
+}
+
+.commentCard {
+  border: 5px solid #50a2a7;
+  border-radius: 15px;
+  list-style: none;
+  text-align: center;
+  padding: 15px;
+  width: 600px;
+  margin: 20 auto;
+  color: #231651;
+}
+
+.articlePage {
+  list-style: none;
+  text-align: center;
+  padding: 15px;
+  width: 800px;
   margin: 0 auto;
 }
 
 .articleHeader {
   text-align: center;
-  margin: 0 auto;
+  margin: 10 auto;
+  background-color: #fbf2c0;
+  color: #9b2915;
 }

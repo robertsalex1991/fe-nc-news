@@ -17,7 +17,7 @@ class CommentForm extends Component {
             onChange={this.handleChange}
             type="text"
           ></input>
-          <button type="submit">Submit</button>
+          <button type="submit" className='positiveButtons'>Submit</button>
         </label>
       </form>
     );

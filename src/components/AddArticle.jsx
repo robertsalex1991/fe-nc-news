@@ -41,7 +41,7 @@ class AddArticle extends Component {
             ></input>
           </label>
           <CreateArticleTopics handleTopicChange={this.handleTopicChange} />
-          <button type="submit">Submit</button>
+          <button type="submit" className='positiveButtons'>Submit</button>
         </form>
       </div>
     );

@@ -30,14 +30,14 @@ class TopicsButtons extends Component {
               <li key={topic.slug}>
                 <Link className="topicButton " to={`/topics/${topic.slug}`}>
                   {" "}
-                  | {topic.slug} |{" "}
+                  {topic.slug}{" "}
                 </Link>
               </li>
             );
           })}
           <li key="allTopics">
             {" "}
-            <Link to="/topics">See All Topics </Link>
+            <Link to="/topics" className="homeButton">See All Topics </Link>
           </li>{" "}
         </ul>
       </div>

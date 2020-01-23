@@ -1,68 +1,59 @@
+# NC news
+
+## About
+
+This project is a news style site with functions including:
+
+- viewing lists of articles with multiple sort options
+- viewing individual articles and comments
+- article/comment voting on other user's comments
+- comment posting/deleting
+- post a new article to an existing topic
+- users can delete their own comments
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Deployed version
 
-In the project directory, you can run:
+This project is available to view [here](https://fe-nc-news-ar.herokuapp.com/)
 
-### `npm start`
+## Back End
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The back end repository for this project is available [here](https://github.com/robertsalex1991/be-nc-news)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## How to run this project locally
 
-### `npm test`
+### Step 1 - Fork and Clone
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pre-requisites: node.js 12.13.0
 
-### `npm run build`
+```
+git clone https://github.com/robertsalex1991/fe-nc-news.git
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cd fe-nc-news
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dependencies:
 
-### `npm run eject`
+- @reach/router: ^1.2.1,
+- axios: ^0.19.0,
+- react: ^16.12.0,
+- react-dom: ^16.12.0,
+- react-scripts: 3.3.0
+- styled-components: ^4.4.1,
+- react-loading: ^2.0.3,
+- react-bootstrap: ^1.0.0-beta.16,
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install all dependencies with
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm i
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Coming soon...
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- view articles written by a specified user
+- adding new topics
+- ability to see which users have been the most active by adding articles and comments
+- ability to sort users by how popular they are based on an aggregation of their article and comment vote counts

@@ -28,7 +28,7 @@ class ArticlePage extends Component {
     if (isLoading) return <p>Loading...</p>;
     if (articleDeleted) return <h1>This article has been deleted</h1>;
     return (
-      <div>
+      <div className="articlePage">
         <h2>{title}</h2>
         <p>{body}</p>
         <p>Written By: {author}</p>

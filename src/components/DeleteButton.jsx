@@ -19,7 +19,7 @@ function DeleteButton(props) {
   if (signedInUser === author) {
     return (
       <div>
-        <button onClick={handleSubmit}>{deleteMsg}</button>
+        <button onClick={handleSubmit} className='deleteButton'>{deleteMsg}</button>
       </div>
     );
   }

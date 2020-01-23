@@ -28,8 +28,8 @@ class UserSignIn extends Component {
     return (
       <div className="UserSignIn">
         <p>Current User: {signedInUser}</p>
-        <form onChange={this.handleSubmit} className="UserSignInForm">
-          <select>
+        <form onChange={this.handleSubmit}>
+          <select className="signInDropList">
             {users.map(user => {
               return <option key={user.username}>{user.username}</option>;
             })}

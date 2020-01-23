@@ -12,7 +12,7 @@ const NavBar = props => {
         home{" "}
       </Link>
       <TopicsButtons />
-      <Link to={"/addArticle"} className="addArticle">
+      <Link to={"/addArticle"} className="homeButton">
         {" "}
         Add Article{" "}
       </Link>

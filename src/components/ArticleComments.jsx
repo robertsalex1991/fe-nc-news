@@ -29,7 +29,7 @@ class ArticleComments extends Component {
         <ul>
           {comments.map(comment => {
             return (
-              <li key={comment.comment_id} className="comment">
+              <li key={comment.comment_id} className="commentCard">
                 <p className="commentAuthor">{comment.author}</p>
                 <p className="commentBody"> {comment.body}</p>
                 <VoteButtons
