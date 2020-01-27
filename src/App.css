@@ -1,7 +1,21 @@
 .App {
   background-color: #fbf2c0;
+  overflow: visible;
   display: grid;
+
   /* grid-template-columns: */
+}
+
+.App-header {
+  /* border: 3px solid #ed254e; */
+  text-align: center;
+  font-size: 100%;
+  color: #9b2915;
+  background-color: #231651;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .titleBanner {
@@ -13,74 +27,23 @@
   min-width: 200px;
 }
 
-.signInDropList {
-  font-size: 13px;
-  padding: 3px 8px;
-  background: #fbf2c0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  position: relative;
-  margin: 10px 10px;
-}
-.sortByDropList {
-  font-size: 13px;
-  padding: 3px 8px;
-  background: #fbf2c0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  position: relative;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.articleTopicSelect {
-  font-size: 13px;
-  padding: 3px 8px;
-  background: #fbf2c0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  position: relative;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.positiveButtons {
-  font-size: 13px;
-  padding: 3px 8px;
-  background: #fbf2c0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  position: relative;
-  margin: 15 auto;
-}
-.sortByForm {
-  margin: 0 auto;
-  padding: 15px;
-}
 .navBar {
   display: inline-flex;
   color: #fbf2c0;
 }
 
-.UserSignIn {
-  color: #fbf2c0;
-  margin: 5px 10px;
-}
-
 .homeButton {
   color: #fbf2c0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
-.UserSignIn {
-  display: flex;
-  align-items: center;
-}
-
-.errorMessage {
-  font-size: 200%;
+.navButton {
+  color: #fbf2c0;
   text-align: center;
+  display: inline-flex;
+  list-style: none;
+  padding-right: 20px;
 }
 
 .topicBar {
@@ -100,59 +63,68 @@
   color: #50a2a7;
 }
 
-.topicButton {
+/* .topicButton {
   text-align: center;
   padding: 6px;
   margin-right: 20px;
   color: #fbf2c0;
-}
+} */
 
-.App-header {
-  /* border: 3px solid #ed254e; */
+.articleTopicSelect {
+  font-size: 13px;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 0 auto;
   text-align: center;
-  font-size: 100%;
-  color: #9b2915;
-  background-color: #231651;
 }
 
-.voteButtons {
+.UserSignIn {
   color: #fbf2c0;
-  background-color: #ed254e;
-  padding: 1px 5px;
-  margin: 0px 5px 12px 0px;
-  border: #e9b44c;
-  border-radius: 15px;
+  margin: 5px 10px;
 }
 
-.deleteButton {
-  color: #ed254e;
-  background-color: #e9b44c;
-  padding: 1px 5px;
-  margin: 0px 5px 12px 0px;
-  border: #e9b44c;
-  border-radius: 15px;
+.UserSignIn {
+  display: flex;
+  align-items: center;
 }
 
-.articleCard {
-  border: 5px solid #50a2a7;
-  border-radius: 15px;
-  list-style: none;
-  text-align: center;
-  padding: 15px;
-  width: 600px;
-  margin: 20 auto;
-  color: #50a2a7;
+.signInDropList {
+  font-size: 13px;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 10px 10px;
 }
 
-.commentCard {
-  border: 5px solid #50a2a7;
-  border-radius: 15px;
-  list-style: none;
-  text-align: center;
-  padding: 15px;
-  width: 600px;
-  margin: 20 auto;
-  color: #231651;
+@media only screen and (max-width: 715px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: xx-large;
+  }
+
+  .topicBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .articleCard {
+    width: 100%;
+  }
 }
 
 .articlePage {
@@ -168,4 +140,81 @@
   margin: 10 auto;
   background-color: #fbf2c0;
   color: #9b2915;
+}
+
+.articleCard {
+  border: 5px solid #50a2a7;
+  border-radius: 15px;
+  list-style: none;
+  text-align: center;
+  padding: 15px;
+  width: 600px;
+  margin: 20 auto;
+  color: #50a2a7;
+}
+
+.sortByForm {
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.sortByDropList {
+  font-size: 13px;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.commentCard {
+  border: 5px solid #50a2a7;
+  border-radius: 15px;
+  list-style: none;
+  text-align: center;
+  padding: 15px;
+  width: 600px;
+  margin: 20 auto;
+  color: #231651;
+}
+
+.positiveButtons {
+  font-size: medium;
+  padding: 3px 8px;
+  background: #fbf2c0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  margin: 15 auto;
+}
+
+.voteButtons {
+  color: #fbf2c0;
+  background-color: #ed254e;
+  padding: 1px 5px;
+  margin: 0 auto;
+  border: #e9b44c;
+  border-radius: 15px;
+  font-size: medium;
+}
+
+.changePage {
+  margin: 0 auto;
+}
+
+.deleteButton {
+  color: #ed254e;
+  background-color: #e9b44c;
+  padding: 1px 5px;
+  margin: 0px 5px 12px 0px;
+  border: #e9b44c;
+  border-radius: 15px;
+  font-size: medium;
+}
+
+.errorMessage {
+  font-size: 200%;
+  text-align: center;
 }

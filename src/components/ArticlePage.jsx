@@ -49,7 +49,7 @@ class ArticlePage extends Component {
         />
         <p>Date Posted: {created_at.slice(0, 10)}</p>
 
-        <ViewToggler hideMessage="hideComments" showMessage="showComments">
+        <ViewToggler hideMessage="Hide Comments" showMessage="Show Comments">
           <ArticleComments
             signedInUser={signedInUser}
             article_id={article.article_id}

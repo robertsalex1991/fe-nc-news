@@ -24,11 +24,11 @@ class TopicsButtons extends Component {
     return (
       <div>
         <ul className="topicBar">
-          <label>Filter by Topic: </label>
+          <label className="navButton">Filter by Topic: </label>
           {topics.map(topic => {
             return (
               <li key={topic.slug}>
-                <Link className="topicButton " to={`/topics/${topic.slug}`}>
+                <Link className="navButton " to={`/topics/${topic.slug}`}>
                   {" "}
                   {topic.slug}{" "}
                 </Link>
@@ -37,7 +37,9 @@ class TopicsButtons extends Component {
           })}
           <li key="allTopics">
             {" "}
-            <Link to="/topics" className="homeButton">See All Topics </Link>
+            <Link to="/topics" className="navButton">
+              See All Topics{" "}
+            </Link>
           </li>{" "}
         </ul>
       </div>

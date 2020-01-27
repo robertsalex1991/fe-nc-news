@@ -8,7 +8,7 @@ function ChangePage(props) {
     updatePage(pageChange);
   };
   return (
-    <div>
+    <div className="changePage">
       <button
         className="voteButtons"
         disabled={page === maxPage}
