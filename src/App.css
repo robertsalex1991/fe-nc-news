@@ -1,5 +1,5 @@
 .App {
-  background-color: #fbf2c0;
+  background-color: #fcf8e1;
   overflow: visible;
   display: grid;
 
@@ -29,17 +29,17 @@
 
 .navBar {
   display: inline-flex;
-  color: #fbf2c0;
+  color: #fcf8e1;
 }
 
 .homeButton {
-  color: #fbf2c0;
+  color: #fcf8e1;
   display: inline-flex;
   align-items: center;
 }
 
 .navButton {
-  color: #fbf2c0;
+  color: #fcf8e1;
   text-align: center;
   display: inline-flex;
   list-style: none;
@@ -47,7 +47,7 @@
 }
 
 .topicBar {
-  color: #fbf2c0;
+  color: #fcf8e1;
   text-align: center;
   display: inline-flex;
   list-style: none;
@@ -73,7 +73,7 @@
 .articleTopicSelect {
   font-size: 13px;
   padding: 3px 8px;
-  background: #fbf2c0;
+  background: #fcf8e1;
   border: 1px solid #ccc;
   border-radius: 6px;
   position: relative;
@@ -82,7 +82,7 @@
 }
 
 .UserSignIn {
-  color: #fbf2c0;
+  color: #fcf8e1;
   margin: 5px 10px;
 }
 
@@ -94,11 +94,15 @@
 .signInDropList {
   font-size: 13px;
   padding: 3px 8px;
-  background: #fbf2c0;
+  background: #fcf8e1;
   border: 1px solid #ccc;
   border-radius: 6px;
   position: relative;
   margin: 10px 10px;
+}
+
+[class*="col-"] {
+  width: auto;
 }
 
 @media only screen and (max-width: 715px) {
@@ -138,7 +142,7 @@
 .articleHeader {
   text-align: center;
   margin: 10 auto;
-  background-color: #fbf2c0;
+  background-color: #fcf8e1;
   color: #9b2915;
 }
 
@@ -161,7 +165,7 @@
 .sortByDropList {
   font-size: 13px;
   padding: 3px 8px;
-  background: #fbf2c0;
+  background: #fcf8e1;
   border: 1px solid #ccc;
   border-radius: 6px;
   position: relative;
@@ -183,7 +187,7 @@
 .positiveButtons {
   font-size: medium;
   padding: 3px 8px;
-  background: #fbf2c0;
+  background: #fcf8e1;
   border: 1px solid #ccc;
   border-radius: 6px;
   position: relative;
@@ -191,7 +195,7 @@
 }
 
 .voteButtons {
-  color: #fbf2c0;
+  color: #fcf8e1;
   background-color: #ed254e;
   padding: 1px 5px;
   margin: 0 auto;
