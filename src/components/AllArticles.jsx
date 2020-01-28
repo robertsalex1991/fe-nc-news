@@ -41,10 +41,12 @@ class AllArticles extends Component {
   render() {
     const { articles, isLoading, err, p, maxPage } = this.state;
 
-    if (isLoading) return <p className="loadingBar">Loading...</p>;
+
     if (err) return <ErrorPage {...err} />;
+    if (isLoading) return <p className="loadingBar">Loading...</p>;
+
     return (
-      <div>
+      <div className="allArticles">
         <h1 className="articleHeader">Articles</h1>
         <SortArticlesBy getOrder={this.getOrder} />
         <ArticleList articles={articles} />
@@ -70,7 +72,8 @@ class AllArticles extends Component {
           articles: articles,
           isLoading: false,
           articleCount: article_count,
-          maxPage: maxPage
+          maxPage: maxPage,
+          err: null
         });
       })
       .catch(({ response }) => {

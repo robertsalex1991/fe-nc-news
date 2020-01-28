@@ -22,7 +22,7 @@
   /* border: 5px solid #50a2a7; */
   border-radius: 5px;
   padding: 5px 20px 10px 20px;
-  margin: 6 auto;
+  margin: 0 auto;
   max-width: 200px;
   min-width: 200px;
 }
@@ -118,6 +118,7 @@
     flex-direction: column;
     align-items: center;
     font-size: xx-large;
+    width: auto;
   }
 
   .topicBar {
@@ -127,7 +128,25 @@
   }
 
   .articleCard {
-    width: 100%;
+    width: auto;
+  }
+  .commentCard {
+    border: 5px solid #50a2a7;
+    border-radius: 15px;
+    list-style: none;
+    text-align: center;
+    padding: 15px;
+    width: 600px;
+    margin: 0 auto;
+    color: #231651;
+  }
+
+  .articlePage {
+    list-style: none;
+    text-align: center;
+    padding: 15px;
+    width: 200px;
+    margin: 0 auto;
   }
 }
 
@@ -153,7 +172,7 @@
   text-align: center;
   padding: 15px;
   width: 600px;
-  margin: 20 auto;
+  margin: 0 auto;
   color: #50a2a7;
 }
 
@@ -180,7 +199,7 @@
   text-align: center;
   padding: 15px;
   width: 600px;
-  margin: 20 auto;
+  margin: 0 auto;
   color: #231651;
 }
 
@@ -202,6 +221,7 @@
   border: #e9b44c;
   border-radius: 15px;
   font-size: medium;
+  font-weight: 500  ;
 }
 
 .changePage {
@@ -216,9 +236,15 @@
   border: #e9b44c;
   border-radius: 15px;
   font-size: medium;
+  font-weight: 500;
 }
 
 .errorMessage {
   font-size: 200%;
   text-align: center;
+}
+
+.commentAuthor {
+  font-size: larger;
+  font-weight: 600;
 }

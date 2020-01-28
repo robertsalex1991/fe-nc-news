@@ -21,9 +21,11 @@ This project is available to view [here](https://fe-nc-news-ar.herokuapp.com/)
 
 The back end repository for this project is available [here](https://github.com/robertsalex1991/be-nc-news)
 
+The hosted back end for this project is available [here](https://be-nc-news-ar.herokuapp.com/api)
+
 ## How to run this project locally
 
-### Step 1 - Fork and Clone
+### Clone repo
 
 Pre-requisites: node.js 12.13.0
 
@@ -48,7 +50,13 @@ Dependencies:
 Install all dependencies with
 
 ```
-npm i
+npm install
+```
+
+Launch the application with
+
+```
+npm start
 ```
 
 Coming soon...
@@ -57,3 +65,7 @@ Coming soon...
 - adding new topics
 - ability to see which users have been the most active by adding articles and comments
 - ability to sort users by how popular they are based on an aggregation of their article and comment vote counts
+
+```
+
+```
