@@ -63,12 +63,12 @@
   color: #50a2a7;
 }
 
-/* .topicButton {
+.topicButton {
   text-align: center;
   padding: 6px;
   margin-right: 20px;
   color: #fbf2c0;
-} */
+}
 
 .articleTopicSelect {
   font-size: 13px;
@@ -103,51 +103,6 @@
 
 [class*="col-"] {
   width: auto;
-}
-
-@media only screen and (max-width: 715px) {
-  .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .navBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: xx-large;
-    width: auto;
-  }
-
-  .topicBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .articleCard {
-    width: auto;
-  }
-  .commentCard {
-    border: 5px solid #50a2a7;
-    border-radius: 15px;
-    list-style: none;
-    text-align: center;
-    padding: 15px;
-    width: 600px;
-    margin: 0 auto;
-    color: #231651;
-  }
-
-  .articlePage {
-    list-style: none;
-    text-align: center;
-    padding: 15px;
-    width: 200px;
-    margin: 0 auto;
-  }
 }
 
 .articlePage {
@@ -221,11 +176,11 @@
   border: #e9b44c;
   border-radius: 15px;
   font-size: medium;
-  font-weight: 500  ;
+  font-weight: 500;
 }
 
 .changePage {
-  margin: 0 auto;
+  margin: 0 400px;
 }
 
 .deleteButton {
@@ -243,8 +198,58 @@
   font-size: 200%;
   text-align: center;
 }
-
-.commentAuthor {
+*/ .commentAuthor {
   font-size: larger;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 715px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: xx-large;
+    width: auto;
+  }
+
+  .topicBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .articleCard {
+    width: auto;
+  }
+
+  .commentCard {
+    list-style: none;
+    text-align: center;
+    width: 230px;
+    color: #231651;
+    margin: 0 -50px;
+  }
+
+  .articlePage {
+    list-style: none;
+    text-align: center;
+    padding: 15px;
+    width: 200px;
+    margin: 0 auto;
+  }
+  .changePage {
+    margin: 0 150px;
+  }
+
+  .sortByForm {
+    margin: 0 80px;
+    padding: 15px;
+  }
 }

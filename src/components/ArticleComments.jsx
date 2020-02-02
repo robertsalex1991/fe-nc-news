@@ -21,11 +21,13 @@ class ArticleComments extends Component {
     if (isLoading) return <p>Loading comments...</p>;
     return (
       <div>
+        <div>
         <CommentForm
           updateComments={this.updateComments}
           signedInUser={signedInUser}
           article_id={article_id}
         />
+        </div>
         <ul>
           {comments.map(comment => {
             return (
